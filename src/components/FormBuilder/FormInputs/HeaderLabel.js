@@ -11,10 +11,11 @@ class HeaderLabel extends Component {
     return (
       <div>
         {required ? (
-          !readOnly &&
+          !readOnly && (
           <span className="ml-1 badge badge-danger float-right">
             Required
           </span>
+        )
           ) : null}
         <h6 dangerouslySetInnerHTML={{ __html: text }} />
       </div>

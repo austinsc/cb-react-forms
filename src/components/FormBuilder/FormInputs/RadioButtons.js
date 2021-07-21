@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import HeaderLabel from "./HeaderLabel";
 import map from 'lodash/map';
+import HeaderLabel from "./HeaderLabel";
 
 class RadioButtons extends Component {
   render() {
@@ -25,17 +25,13 @@ class RadioButtons extends Component {
       disabled: readOnly,
     } : {}
 
-    const isChecked = (id) => {
-      return generator 
+    const isChecked = (id) => generator 
       ? defaultValue === id || input.value === id 
       : null
-    }
 
-    const change = (id) => {
-      return generator
+    const change = (id) => generator
       ? () => input.onChange(id)
       : () => {}
-    }
     
     return (
       <React.Fragment>

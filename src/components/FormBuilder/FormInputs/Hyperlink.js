@@ -27,20 +27,20 @@ class Hyperlink extends Component {
 		} : {}
 
     return (
-			<React.Fragment>
-				<HeaderLabel 
-					label={generator ? label : item.label } 
-					required={generator ? required : item.required}
-					readOnly={readOnly} 
-				/>
-				<input 
+      <React.Fragment>
+        <HeaderLabel 
+          label={generator ? label : item.label} 
+          required={generator ? required : item.required}
+          readOnly={readOnly}
+        />
+        <input 
           {..._props}
-					type={type}
+          type={type}
           className={className}
-					placeholder={placeholder}
-				/>
-				{generator ? showError(meta.touched, meta.error, meta.warning) : ''}
-			</React.Fragment>
+          placeholder={placeholder}
+        />
+        {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
+      </React.Fragment>
     );
   }
 }

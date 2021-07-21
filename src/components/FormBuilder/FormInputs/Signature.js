@@ -44,11 +44,12 @@ class Signature extends Component {
         {
           !generator 
             ? <p className="py-3 px-3 bg-dark rounded text-white d-block">Signature</p>
-            : <React.Fragment>
+            : (
+              <React.Fragment>
                 <SignatureCanvas {..._props} />
                 <div>{showError(meta.touched, meta.error, meta.warning)}</div>
                 {
-                  !readOnly &&
+                  !readOnly && (
                   <div>
                     <button
                       type="button"
@@ -71,8 +72,9 @@ class Signature extends Component {
                       Clear
                     </button>
                   </div>
-                }
+                )}
               </React.Fragment>
+)
         }
       </div>
     )

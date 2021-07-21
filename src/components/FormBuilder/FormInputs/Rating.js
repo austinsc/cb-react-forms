@@ -26,7 +26,7 @@ class Rating extends Component {
     } = this.props;
 
     const _props = generator ? {
-      numberOfStars: numberOfStars,
+      numberOfStars,
       isSelectable: !readOnly,
       rating: defaultValue || input.value || 0,
       changeRating: val => input.onChange(val)

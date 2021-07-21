@@ -13,33 +13,26 @@ const Builder = ({
   editorVisible,
   onSubmit,
   items
-}) => {
-  return (
-    <React.Fragment>
-      {
-        editorVisible &&
-        <FormEditor />
-      }
-      <div className="container">
-        <div className="row mt-3">
-          <div className="col-md-8">
-            <Preview 
-              onSubmit={onSubmit} 
-            />
-          </div>
-          <div className="col-md-4">
-            <Toolbar 
-              items={items} 
-            />
-          </div>
+}) => (
+  <React.Fragment>
+    {editorVisible && <FormEditor />}
+    <div className="container">
+      <div className="row mt-3">
+        <div className="col-md-8">
+          <Preview onSubmit={onSubmit} />
+        </div>
+        <div className="col-md-4">
+          <Toolbar
+            items={items}
+          />
         </div>
       </div>
-    </React.Fragment>
+    </div>
+  </React.Fragment>
   )
-}
 
 Builder.propTypes = {
-	onSubmit: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 	items: PropTypes.array
 };
 
@@ -49,9 +42,9 @@ Builder.defaultProps = {
 
 export default compose(
   connect(
-    state => ({ 
-      editorVisible : state.formBuilder.editorVisible 
-    }), 
+    state => ({
+      editorVisible : state.formBuilder.editorVisible
+    }),
     null
   ),
   DragDropContext(HTML5Backend)

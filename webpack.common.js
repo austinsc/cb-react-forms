@@ -8,7 +8,7 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 })
 
 // Configure status logs while build.
-const statsConfig = {    
+const statsConfig = {
   colors: true,
   hash: true,
   timings: true,
@@ -24,7 +24,7 @@ module.exports = {
 	output: {
     path: path.join(__dirname, 'dist'),
 		filename: 'index.js',
-		libraryTarget: 'commonjs2',
+		//libraryTarget: 'commonjs2',
 	},
   module: {
     rules: [

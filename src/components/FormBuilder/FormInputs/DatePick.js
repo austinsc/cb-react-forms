@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import HeaderLabel from './HeaderLabel';
 import DatePicker from 'react-date-picker';
+import HeaderLabel from './HeaderLabel';
 
 class DatePick extends Component {
   render() {
@@ -28,23 +28,29 @@ class DatePick extends Component {
     const renderDate = (minDate = null, maxDate = null) => {
       switch(true) {
         case minDate !== null && maxDate !== null:
-          return <DatePicker 
-                    {..._props}
-                    maxDate={new Date(maxDate)}
-                    minDate={new Date(minDate)}
-                  />
+          return (
+            <DatePicker 
+              {..._props}
+              maxDate={new Date(maxDate)}
+              minDate={new Date(minDate)}
+            />
+)
 
         case minDate !== null:
-          return <DatePicker 
-                    {..._props}
-                    minDate={new Date(formInput.minDate)}
-                  />
+          return (
+            <DatePicker 
+              {..._props}
+              minDate={new Date(formInput.minDate)}
+            />
+)
 
         case  maxDate !== null:
-          return <DatePicker 
-                    {..._props}
-                    maxDate={new Date(formInput.maxDate)}
-                  />
+          return (
+            <DatePicker 
+              {..._props}
+              maxDate={new Date(formInput.maxDate)}
+            />
+)
         
         default:
           return <DatePicker {..._props} />
@@ -55,7 +61,7 @@ class DatePick extends Component {
       <div>
         <React.Fragment>
           <HeaderLabel 
-            label={generator ? label : item.label } 
+            label={generator ? label : item.label} 
             required={generator ? required : item.required}
             readOnly={readOnly} 
           />

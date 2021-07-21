@@ -153,6 +153,6 @@ export default (item) => {
         width: 300
       }
     default:
-      return;
+      
   }
 }

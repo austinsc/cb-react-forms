@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import HeaderLabel from './HeaderLabel';
 import map from 'lodash/map';
+import HeaderLabel from './HeaderLabel';
 
 class Checkboxes extends Component {
 
@@ -35,19 +35,15 @@ class Checkboxes extends Component {
       disabled
     }
     
-    const isChecked = (id) => {
-      return generator 
+    const isChecked = (id) => generator 
         ? defaultValue.some(i => i === id) 
           || (Array.isArray(input.value) 
           && input.value.some(i => i === id))
         : null
-    }
 
-    const change = (checked, id) => {
-      return generator 
+    const change = (checked, id) => generator 
         ? this.handleChange(checked, input, id) 
         : () => {}
-    }
 
     const options = generator ? this.props.options : this.props.item.options; 
 
@@ -67,7 +63,7 @@ class Checkboxes extends Component {
                 id={value}
                 name={value}
                 value={value}
-                readOnly={generator ? false : true}
+                readOnly={!generator}
                 className={className}
                 checked={isChecked(id)}
                 onChange={e => change(e.target.checked, id)}

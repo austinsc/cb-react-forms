@@ -39,12 +39,13 @@ class ValidatedFormInputs extends Component {
   formInputLabel = (label, required) => (
     <React.Fragment>
       {required ? (
-        !this.props.readOnly &&
+        !this.props.readOnly && (
         <span
           className="badge badge-danger float-right"
         >
           Required
         </span>
+      )
       ) : null}
       <h6 dangerouslySetInnerHTML={{ __html: label }} />
     </React.Fragment>
@@ -133,7 +134,7 @@ class ValidatedFormInputs extends Component {
                       readOnly,
                       type: "email",
                       generator: true,
-                      required: required,
+                      required,
                       label: formInput.label,
                       showError: this.showError,
                       defaultValue: responseData && responseData[id],
@@ -153,7 +154,7 @@ class ValidatedFormInputs extends Component {
                       id,
                       readOnly,
                       generator: true,
-                      required: required,
+                      required,
                       label: formInput.label,
                       showError: this.showError,
                       defaultValue: responseData && responseData[id],
@@ -176,8 +177,8 @@ class ValidatedFormInputs extends Component {
                       readOnly,
                       type: "number",
                       generator:true,
-                      required: required,
-                      readOnly: readOnly,
+                      required,
+                      readOnly,
                       label: formInput.label,
                       showError: this.showError,
                       defaultValue: responseData && responseData[id],
@@ -198,7 +199,7 @@ class ValidatedFormInputs extends Component {
                       options,
                       readOnly,
                       generator: true,
-                      required: required,
+                      required,
                       label: formInput.label,
                       showError: this.showError,
                       defaultValue: responseData && responseData[id],
@@ -219,7 +220,7 @@ class ValidatedFormInputs extends Component {
                       readOnly,
                       generator: true,
                       type: 'checkbox',
-                      required: required,
+                      required,
                       label: formInput.label,
                       showError: this.showError,
                       defaultValue:
@@ -261,7 +262,7 @@ class ValidatedFormInputs extends Component {
                       options,
                       readOnly,
                       generator: true,
-                      required: required,
+                      required,
                       label: formInput.label,
                       showError: this.showError,
                       defaultValue: responseData && responseData[id],
@@ -281,7 +282,7 @@ class ValidatedFormInputs extends Component {
                       id,
                       readOnly,
                       generator: true,
-                      required: required,
+                      required,
                       label: formInput.label,
                       showError: this.showError,
                       numberOfStars: formInput.numberOfStars,
@@ -304,7 +305,7 @@ class ValidatedFormInputs extends Component {
                       readOnly,
                       type:"text",
                       generator:true,
-                      required: required,
+                      required,
                       label: formInput.label,
                       showError: this.showError,
                       defaultValue: responseData && responseData[id],
@@ -325,7 +326,7 @@ class ValidatedFormInputs extends Component {
                       readOnly,
                       formInput,
                       generator: true,
-                      required: required,
+                      required,
                       label: formInput.label,
                       showError: this.showError,
                       defaultValue: responseData && responseData[id],
@@ -346,7 +347,7 @@ class ValidatedFormInputs extends Component {
                       readOnly,
                       formInput,
                       generator: true,
-                      required: required,
+                      required,
                       label: formInput.label,
                       showError: this.showError,
                       defaultValue: responseData && responseData[id],
